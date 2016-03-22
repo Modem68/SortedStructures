@@ -5,8 +5,13 @@
 #include <vector>
 
 /*
-    This class implements a sorted vector using 
-    the STL vector as its underlying container
+    This class implements a sorted vector, using the STL 
+    vector as its underlying container.
+
+    This class' condition of "sorted-ness" implies that any 
+    literal or object type (T) that this class contains must 
+    implement the comparison operators (>,<,>=,<=,==,!=). 
+    Otherwise, you will not be able to use this class.
 */
 template<class T>
 class SortedVector{
@@ -27,7 +32,7 @@ public:
     void clear() { vec.clear(); }
     unsigned int count(const T& data);
     void display();
-    
+
     void insert(const T& data);
     T& remove(unsigned int pos) { T& data = at(pos); vec.erase(vec.begin()+pos); return data; }
     

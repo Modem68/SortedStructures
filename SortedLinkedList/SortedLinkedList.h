@@ -6,8 +6,13 @@
 #include <algorithm>
 
 /*
-    This class implements a sorted doubly linked list 
-    using the STL list as its underlying container
+    This class implements a sorted doubly linked list, 
+    using the STL list as its underlying container.
+
+    This class' condition of "sorted-ness" implies that any 
+    literal or object type (T) that this class contains must 
+    implement the comparison operators (>,<,>=,<=,==,!=). 
+    Otherwise, you will not be able to use this class.
 */
 template<class T>
 class SortedLinkedList{
