@@ -1,15 +1,15 @@
 //
-//  SortedVectorTester.h
+//  SortedLinkedListTester.h
 //  AssignmentTester
 //
 //  Created by Simon Ayzman on 2/21/16.
 //  Copyright © 2016 Simon Ayzman. All rights reserved.
 //
 
-#ifndef SortedVectorTester_h
-#define SortedVectorTester_h
+#ifndef SortedLinkedListTester_h
+#define SortedLinkedListTester_h
 
-#include "SortedVector.h"
+#include "SortedLinkedList.h"
 
 // Program will stop whenever an assertion hits an unmet invariant.
 // In other words, the condition provided to an assertion must be true
@@ -23,6 +23,6 @@ void testPopBack();
 void testCount();
 //void testEqualityOperator();
 
-bool isSorted(SortedVector<int>& sortedVector);
+bool isSorted(SortedLinkedList<int>& sortedLinkedList);
 
-#endif /* SortedVectorTester_h */
+#endif /* SortedLinkedListTester_h */

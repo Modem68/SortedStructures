@@ -2,39 +2,31 @@
 #define __CS235_SORTED_VECTOR_H_
 
 #include <iostream>
+#include <vector>
 
 template<class T>
 class SortedVector{
 public:
-    SortedVector(unsigned int newCapacity = 3) : vecSize(0), vecCapacity(newCapacity) { arr = new T[vecCapacity]; }
-    ~SortedVector() { delete[] arr; }
+    SortedVector() { vec.reserve(50); }
 
-    // Vector state functions
-    unsigned int capacity() { return vecCapacity; }
-    unsigned int size() { return vecSize; }
-    bool empty() { return vecSize == 0; }
-    T at(unsigned int pos);
-    void display();
-    unsigned int count(const T& data);
+    unsigned int capacity() { return vec.capacity(); }
+    unsigned int size() { return vec.size(); }
+    bool empty() { return vec.empty(); }
+    void clear() { vec.clear(); }
 
-    // Data manipulation functions
+    T& front() { return vec.front(); }
+    T& back() { return vec.back(); }
+    T& at(unsigned int pos) { return vec.at(pos); }
+    T& pop_back() { T& data = back(); vec.pop_back(); return data; }
+    T& remove(unsigned int pos) { T& data = at(pos); vec.erase(vec.begin()+pos); return data; }
+
     void insert(const T& data);
-    T remove(unsigned int pos);
-    T pop_back();
 
-    // Operator overloads
-    bool operator==(const SortedVector& rhs);
-
-    // Miscellaneous Functions
-    void clear();
+    unsigned int count(const T& data);
+    void display();
     
 private:
-    T* arr;
-    unsigned int vecSize;
-    unsigned int vecCapacity;
-
-    void resize(unsigned int newCapacity);
-    bool isIndexOutOfBounds(unsigned int pos) { return (empty() || pos >= vecSize); }
+    std::vector<T> vec;
 
 };
 
