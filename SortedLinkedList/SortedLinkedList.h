@@ -11,10 +11,18 @@
 
     This class' condition of "sorted-ness" implies that any 
     literal or object type (T) that this class contains must 
-    implement the comparison operators (>,<,>=,<=,==,!=). 
-    Otherwise, you will not be able to use this class.
+    have the ability to be "compared." This will manifest in
+    the form of a call to operator<. Therefore, the object type 
+    (T) must at least implement operator<.
+
+    HOWEVER, if this class will hold POINTERS to OBJECTS, you 
+    must go one step further. You must create a "comparator" 
+    struct/class that implements the operator() function. Inside 
+    of this function, you must return the result of a "less than"
+    comparison (simply, *obj1 < *obj2!). Then, you must supply 
+    this comparator struct as the second template parameter.
 */
-template<class T>
+template<class T, class Comparator = std::less<T>>
 class SortedLinkedList{
 public:
     SortedLinkedList() {}
@@ -34,7 +42,6 @@ public:
     // O(n) operations
     void clear() { linkedList.clear(); }
     T& at(unsigned int pos) { auto it = linkedList.begin(); std::advance(it,pos); return *it; }
-    unsigned int count(const T& data);
     void display();
 
     void insert(const T& data);
