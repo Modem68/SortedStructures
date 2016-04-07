@@ -16,7 +16,7 @@ void runTests() {
     testBaseFunctions();
     testPopBack();
     //testRemove();
-    testCount();
+    //testCount();
     //testEqualityOperator();
 
     std::cout << "All your tests have passed!\n";
@@ -299,7 +299,7 @@ void testRemove() {
     assert(sortedVector.at(1) == 150);
     assert(sortedVector.at(2) == 200);
 }
-*/
+
 
 void testCount() {
     SortedVector<int> sortedVector;
@@ -348,7 +348,7 @@ void testCount() {
     // assert(sortedVector.count(10) == 0);
 }
 
-/*
+
 void testEqualityOperator() {
     SortedVector<int> sortedVector1;
     SortedVector<int> sortedVector2;

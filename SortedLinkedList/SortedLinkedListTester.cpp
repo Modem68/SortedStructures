@@ -16,7 +16,7 @@ void runTests() {
     testBaseFunctions();
     testPopBack();
     //testRemove();
-    testCount();
+    //testCount();
     //testEqualityOperator();
 
     std::cout << "All your tests have passed!\n";
@@ -299,7 +299,7 @@ void testRemove() {
     assert(sortedLinkedList.at(1) == 150);
     assert(sortedLinkedList.at(2) == 200);
 }
-*/
+
 
 void testCount() {
     SortedLinkedList<int> sortedLinkedList;
@@ -348,7 +348,7 @@ void testCount() {
     // assert(sortedLinkedList.count(10) == 0);
 }
 
-/*
+
 void testEqualityOperator() {
     SortedLinkedList<int> sortedLinkedList1;
     SortedLinkedList<int> sortedLinkedList2;

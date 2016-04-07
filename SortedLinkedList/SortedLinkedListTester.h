@@ -20,7 +20,7 @@ void runTests();
 void testBaseFunctions(); //capacity, size, empty, at, insert
 void testPopBack();
 //void testRemove();
-void testCount();
+//void testCount();
 //void testEqualityOperator();
 
 bool isSorted(SortedLinkedList<int>& sortedLinkedList);
