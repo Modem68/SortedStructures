@@ -16,16 +16,31 @@ void SortedVector<T, Comparator>::display() {
     std::cout << vec[size()-1] << std::endl;
 }
 
-
 template<class T, class Comparator>
 void SortedVector<T, Comparator>::insert(const T& data) {
     if (empty()) {
         vec.push_back(data);
         return;
     }
+    
+    // Temporary use of O(n) search algorithm 
+    // to handle lower_bound issues
     Comparator comparator;
-    auto iterator = std::lower_bound(vec.begin(), vec.end(), data, comparator);
-    vec.insert(iterator, data);
+    int index = vec.size();
+    for(int i = 0; i < vec.size(); ++i)
+    {
+        if(comparator(vec[i], data))
+	{
+	    continue;
+	}
+	else
+	{
+	    index = i;
+	    break;
+	}
+    }    
+    
+    vec.insert(vec.begin()+index, data);
 }
 
 #endif

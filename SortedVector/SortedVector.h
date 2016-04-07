@@ -45,7 +45,6 @@ public:
     
 private:
     std::vector<T> vec;
-
 };
 
 #include "SortedVector.cpp"
