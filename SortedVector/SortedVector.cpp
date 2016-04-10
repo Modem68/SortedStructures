@@ -4,7 +4,7 @@
 #include "SortedVector.h"
 
 template<class T, class Comparator>
-void SortedVector<T, Comparator>::display() 
+void SortedVector<T, Comparator>::display() const
 {
     if (empty()) 
     {

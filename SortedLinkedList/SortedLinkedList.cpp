@@ -4,7 +4,7 @@
 #include "SortedLinkedList.h"
 
 template<class T, class Comparator>
-void SortedLinkedList<T, Comparator>::display() 
+void SortedLinkedList<T, Comparator>::display() const
 {
     if (empty()) 
     {

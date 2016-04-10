@@ -28,19 +28,22 @@ public:
     SortedLinkedList() {}
 
     // O(1) operations
-    unsigned int size() { return linkedList.size(); }
-    bool empty() { return linkedList.empty(); }
+    unsigned int size() const { return (unsigned int) linkedList.size(); }
+    bool empty() const { return linkedList.empty(); }
 
     T& front() { return linkedList.front(); }
     T& back() { return linkedList.back(); }
+    const T& front() const { return linkedList.front(); }
+    const T& back() const { return linkedList.back(); }
 
     T& pop_front() { T& data = front(); linkedList.pop_front(); return data; }
     T& pop_back() { T& data = back(); linkedList.pop_back(); return data; }
 
     // O(n) operations
+    void display() const;
     void clear() { linkedList.clear(); }
     T& at(unsigned int pos) { auto it = linkedList.begin(); std::advance(it,pos); return *it; }
-    void display();
+    const T& at(unsigned int pos) const { auto it = linkedList.begin(); std::advance(it,pos); return *it; }
 
     void insert(const T& data);
     T& remove(unsigned int pos) { T& data = at(pos); linkedList.erase(linkedList.begin()+pos); return data; }

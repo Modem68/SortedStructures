@@ -28,18 +28,22 @@ public:
     SortedVector() { vec.reserve(50); }
 
     // O(1) operations
-    unsigned int capacity() { return vec.capacity(); }
-    unsigned int size() { return vec.size(); }
-    bool empty() { return vec.empty(); }
+    unsigned int capacity() const { return (unsigned int) vec.capacity(); }
+    unsigned int size() const { return (unsigned int) vec.size(); }
+    bool empty() const { return vec.empty(); }
 
     T& at(unsigned int pos) { return vec.at(pos); }
     T& front() { return vec.front(); }
     T& back() { return vec.back(); }
+    const T& at(unsigned int pos) const { return vec.at(pos); }
+    const T& front() const { return vec.front(); }
+    const T& back() const { return vec.back(); }
+
     T& pop_back() { T& data = back(); vec.pop_back(); return data; }
 
     // O(n) operations
     void clear() { vec.clear(); }
-    void display();
+    void display() const;
 
     void insert(const T& data);
     T& remove(unsigned int pos) { T& data = at(pos); vec.erase(vec.begin()+pos); return data; }
