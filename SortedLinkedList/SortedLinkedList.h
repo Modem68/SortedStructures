@@ -34,7 +34,7 @@ public:
     T& front() { return linkedList.front(); }
     T& back() { return linkedList.back(); }
 
-    T& pop_front() { T& data = back(); linkedList.pop_back(); return data; }
+    T& pop_front() { T& data = front(); linkedList.pop_front(); return data; }
     T& pop_back() { T& data = back(); linkedList.pop_back(); return data; }
 
     // O(n) operations
