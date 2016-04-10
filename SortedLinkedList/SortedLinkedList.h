@@ -34,8 +34,6 @@ public:
     T& front() { return linkedList.front(); }
     T& back() { return linkedList.back(); }
 
-    void push_front(const T& data);
-    void push_back(const T& data);
     T& pop_front() { T& data = back(); linkedList.pop_back(); return data; }
     T& pop_back() { T& data = back(); linkedList.pop_back(); return data; }
 
@@ -49,6 +47,7 @@ public:
 
     
 private:
+    
     std::list<T> linkedList;
 
 };

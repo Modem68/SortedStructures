@@ -22,7 +22,8 @@
     this comparator struct as the second template parameter.
 */
 template<class T, class Comparator = std::less<T>>
-class SortedVector{
+class SortedVector
+{
 public:
     SortedVector() { vec.reserve(50); }
 
@@ -44,7 +45,9 @@ public:
     T& remove(unsigned int pos) { T& data = at(pos); vec.erase(vec.begin()+pos); return data; }
     
 private:
+
     std::vector<T> vec;
+
 };
 
 #include "SortedVector.cpp"

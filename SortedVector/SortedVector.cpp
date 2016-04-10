@@ -4,21 +4,26 @@
 #include "SortedVector.h"
 
 template<class T, class Comparator>
-void SortedVector<T, Comparator>::display() {
-    if (empty()) {
+void SortedVector<T, Comparator>::display() 
+{
+    if (empty()) 
+    {
         std::cout << "(empty)" << std::endl;
         return;
     }
 
-    for (int i = 0; i < size()-1; i++) {
+    for (int i = 0; i < size()-1; i++) 
+    {
         std::cout << vec[i] << ", ";
     }
     std::cout << vec[size()-1] << std::endl;
 }
 
 template<class T, class Comparator>
-void SortedVector<T, Comparator>::insert(const T& data) {
-    if (empty()) {
+void SortedVector<T, Comparator>::insert(const T& data) 
+{
+    if (empty()) 
+    {
         vec.push_back(data);
         return;
     }
@@ -30,14 +35,14 @@ void SortedVector<T, Comparator>::insert(const T& data) {
     for(int i = 0; i < vec.size(); ++i)
     {
         if(comparator(vec[i], data))
-	{
-	    continue;
-	}
-	else
-	{
-	    index = i;
-	    break;
-	}
+    	{
+    	    continue;
+    	}
+    	else
+    	{
+    	    index = i;
+    	    break;
+        }
     }    
     
     vec.insert(vec.begin()+index, data);
