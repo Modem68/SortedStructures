@@ -46,7 +46,7 @@ public:
     const T& at(unsigned int pos) const { auto it = linkedList.begin(); std::advance(it,pos); return *it; }
 
     void insert(const T& data);
-    T& remove(unsigned int pos) { T& data = at(pos); linkedList.erase(linkedList.begin()+pos); return data; }
+    T& remove(unsigned int pos) { auto it = linkedList.begin(); std::advance(it,pos); T& data = *it; linkedList.erase(it); return data; }
 
     
 private:
