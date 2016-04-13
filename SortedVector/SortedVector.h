@@ -46,8 +46,7 @@ public:
     void display() const;
 
     void insert(const T& data);
-    T& remove(unsigned int pos) { T& data = at(pos); vec.erase(vec.begin()+pos); return data; }
-    
+    T& remove(unsigned int pos) { auto it = vec.begin(); std::advance(it,pos); T& data = *it; vec.erase(it); return data; }    
 private:
 
     std::vector<T> vec;
